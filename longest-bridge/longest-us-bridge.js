@@ -18,7 +18,7 @@ bridges = [
 ]
 
 var bridgeIcon = L.icon({
-    iconUrl: 'bridge.png',
+    iconUrl: 'bridge-pictures/bridge.png',
 
     iconSize: [25, 40], // size of the icon
 });
