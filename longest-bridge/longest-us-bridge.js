@@ -20,14 +20,27 @@ bridges = [
 var bridgeIcon = L.icon({
     iconUrl: 'bridge.png',
 
-    iconSize: [25, 50], // size of the icon
+    iconSize: [25, 40], // size of the icon
 });
 
 // loop over that array to create the markers and popups
 bridges.forEach(function(usBridges) {
     // todo draw a marker
     let markerText = `${usBridges.name}<br> Span: ${usBridges.span} meters`
-    L.marker(usBridges.coordinates, {icon: bridgeIcon} ).addTo(map)
+    L.marker(usBridges.coordinates, {icon: bridgeIcon} ).bindPopup(markerText).addTo(map)
 })
 
-// L.marker([40.6066, -74.0447], {icon: bridgeIcon}).addTo(map);
+let bridgeSpans = []
+
+let bridgeNames = []
+
+bridges.forEach(bridge => {
+    let bridgeName = bridge.name
+    bridgeNames.push(bridgeName)
+
+    let bridgeSpan = bridge.span
+    bridgeSpans.push(bridgeSpan)
+    
+})
+console.log(bridgeSpans)
+console.log(bridgeNames)
